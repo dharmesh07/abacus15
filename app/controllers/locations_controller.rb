@@ -14,7 +14,11 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
-    @location.latlong=params[:latlong]
+    lat=params[:lat].insert(params[:latpos].to_i,".")
+    lng=params[:lng].insert(params[:lngpos].to_i,".")
+
+    @location.latlong=lat+","+lng
+
     @location.pos_name=params[:desc]
     respond_to do |format|
       format.html

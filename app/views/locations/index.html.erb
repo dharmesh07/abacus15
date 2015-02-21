@@ -3,10 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Latlong</th>
       <th>Pos name</th>
-      <th>Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +12,10 @@
   <tbody>
     <% @locations.each do |location| %>
       <tr>
-        <td><%= location.user_id %></td>
         <td><%= location.latlong %></td>
         <td><%= location.pos_name %></td>
-        <td><%= location.email %></td>
-        <td><%= link_to 'Show', location %></td>
+        <%latlng=location.latlong.split(',')%>
+        <td><button onclick="placeMarker1(<%=latlng[0]%>,<%=latlng[1]%>)">Show on map</button> </td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
