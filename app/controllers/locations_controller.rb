@@ -14,6 +14,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    @location.latlong=params[:latlong]
     respond_with(@location)
   end
 
@@ -36,7 +37,12 @@ class LocationsController < ApplicationController
     respond_with(@location)
   end
   def save_loc
-
+    @location=Location.new(location_params)
+    if (@location.save)
+      redirect_to root_path
+    else
+      respond_with(@location)
+    end
   end
   private
     def set_location

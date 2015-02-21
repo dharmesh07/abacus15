@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'maps'=>"maps#index",:as=>"maps_index"
-    devise_for :users
+  get 'location/save/:latlong'=>"locations#new",:as=>"save_location"
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
