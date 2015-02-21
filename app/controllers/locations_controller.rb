@@ -35,7 +35,9 @@ class LocationsController < ApplicationController
     @location.destroy
     respond_with(@location)
   end
+  def save_loc
 
+  end
   private
     def set_location
       @location = Location.find(params[:id])
