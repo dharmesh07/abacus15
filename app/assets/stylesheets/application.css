@@ -18,12 +18,14 @@ html,body{
   height:100%;
   background-color:#274873;
 }
-.navbar{
-  background-color:#274873;
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover,.navbar-default .navbar-nav > li > a,.navbar-brand,.navbar{
   color:#fff;
+  background-color:#BE0C25;
+  border-color:#BE0C25;
 }
-.navbar-default .navbar-nav > li > a,.navbar-brand{
-  color:#fff;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  background-color:#fff;
+  color:#BE0C25;
 }
 #map-canvas {
   margin-left: 50px;
