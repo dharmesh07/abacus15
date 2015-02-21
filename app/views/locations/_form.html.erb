@@ -11,14 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <label>Location</label><br>
-    <%= f.text_field :latlong%><br>
+  <div>
+    <label class="whity">Location</label><br>
+    <%= f.text_field :latlong,:class=>"form-control"%><br>
   </div>
-  <div class="field">
-    <label>Location name</label>
-    <%= f.text_field :pos_name %>
+  <br>
+  <div>
+    <label class="whity">Location name</label>
+    <%= f.text_field :pos_name,:class=>"form-control" %>
   </div>
+  <br>
   <div class="actions">
     <input type="submit",value="Save location">
   </div>

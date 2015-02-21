@@ -16,9 +16,21 @@
 html,body{
   width:100%;
   height:100%;
+  background-color:#274873;
+}
+.navbar{
+  background-color:#274873;
+  color:#fff;
+}
+.navbar-default .navbar-nav > li > a,.navbar-brand{
+  color:#fff;
 }
 #map-canvas {
-  margin: 50px;
+  margin-left: 50px;
+  margin-right:50px;
   padding: 0px;
   height:70%;
+}
+.whity{
+  color:#fff;
 }
