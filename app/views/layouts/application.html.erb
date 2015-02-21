@@ -55,11 +55,14 @@
     </div>
   </div>
   <div class="container">
+
+<div id="ajaxarea"></div>
 <div class="row">
   <div class="col-lg-9">
     <%= bootstrap_flash %>
     <%if user_signed_in?%>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"link") %>
+
+      <%= link_to('Logout'+current_user.name.to_s, destroy_user_session_path, :method => :delete,:class=>"link") %>
     <%else%>
       <%=link_to('Login',new_user_session_path)%>
     <%end%>
@@ -70,7 +73,12 @@
 
 </div> <!-- /container -->
 <br>
-<div id="map-canvas"></div>
+<%if user_signed_in?%>
+
+  <div id="map-canvas"></div>
+
+<a href="/location/save/skjfskd/kottur" data-remote="true">Save</a>
+<%end%>
   <footer>
     <p>&copy; Company 2015</p>
   </footer>

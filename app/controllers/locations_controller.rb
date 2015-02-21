@@ -15,16 +15,29 @@ class LocationsController < ApplicationController
   def new
     @location = Location.new
     @location.latlong=params[:latlong]
-    respond_with(@location)
+    @location.pos_name=params[:desc]
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
   end
 
   def create
+  if user_signed_in?
     @location = Location.new(location_params)
-    @location.save
+    @location.user_id=current_user.id
+    @location.email=current_user.email
+    if @location.save
+      redirect_to root_path
+    else
     respond_with(@location)
+    end
+  else
+    redirect_to new_user_session_path
+  end
   end
 
   def update
