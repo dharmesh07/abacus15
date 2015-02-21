@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locations
+
   root 'home#index'
   get 'maps'=>"maps#index",:as=>"maps_index"
     devise_for :users
