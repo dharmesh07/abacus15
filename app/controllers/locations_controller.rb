@@ -4,8 +4,12 @@ class LocationsController < ApplicationController
   respond_to :html
 
   def index
-    @locations = Location.all
-    respond_with(@locations)
+    if user_signed_in?
+    @locations = current_user.location
+      respond_with(@locations)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def show

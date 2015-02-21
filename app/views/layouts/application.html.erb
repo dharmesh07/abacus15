@@ -90,7 +90,7 @@ function initialize() {
   geocoder = new google.maps.Geocoder();
 
   var mapOptions = {
-zoom: 4,
+zoom: 12,
       center: new google.maps.LatLng(13.082488002506816,80.27572631835938)
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -129,8 +129,6 @@ map: map
         infowindow.setContent(infocontent);
         infowindow.open(map, marker);
         });
-
-
       }
       else {
       alert('Geocoder failed due to: ' + status);
@@ -151,6 +149,7 @@ function placeMarker1(lat,lng) {
 position: latlng,
 map: map
 });
+      map.panTo(latlng);
       google.maps.event.addListener(marker, 'click', function() {
         console.log(lat) 
         latString=lat.toString()
