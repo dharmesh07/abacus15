@@ -15,9 +15,14 @@
         <td class="whity"><%= location.latlong %></td>
         <td class="whity"><%= location.pos_name %></td>
         <%latlng=location.latlong.split(',')%>
-        <td><button onclick="placeMarker1(<%=latlng[0]%>,<%=latlng[1]%>)">Show on map</button> </td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button onclick="placeMarker1(<%=latlng[0]%>,<%=latlng[1]%>)" class="btn btn-success"><i class="fa fa-map-marker"></i> Show on map</button> </td>
+        <td><%= link_to edit_location_path(location), :class=>"btn btn-info" do %>
+          <i class="fa fa-edit"></i>  Edit </td>
+      <%end%>
+      <td><%= link_to location, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" do%>
+      <i class="fa fa-trash-o"></i> Delete
+    <%end%>
+    </td>
       </tr>
     <% end %>
   </tbody>
