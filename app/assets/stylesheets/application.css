@@ -42,4 +42,14 @@ footer{
   color:black;
   background-color:white;
   padding:1%;
+} 
+.shared-links{
+  color:#fff;
+  background:none;
+  text-decoration:none;
+}
+.shared-links:hover{
+  color:#fff;
+  background:inherit;
+  text-decoration:underline;
 }
